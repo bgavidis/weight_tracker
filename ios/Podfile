@@ -1,7 +1,13 @@
+# Define iOS platform version
 platform :ios, '15.5'
 
+# Ensure CocoaPods uses frameworks and modular headers
 use_frameworks!
 use_modular_headers!
+
+# Load Flutter environment
+flutter_root = File.expand_path('..', File.dirname(__FILE__))
+eval(File.read(File.join(flutter_root, 'flutter', 'packages', 'flutter_tools', 'bin', 'podhelper.rb')), binding)
 
 target 'Runner' do
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
