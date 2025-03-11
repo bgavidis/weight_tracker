@@ -4,14 +4,5 @@ use_frameworks!
 use_modular_headers!
 
 target 'Runner' do
-  # Ensure Flutter is installed properly
-  flutter_root = ENV['FLUTTER_ROOT']
-  if flutter_root.nil?
-    puts "Error: FLUTTER_ROOT is not set. Make sure Flutter is installed."
-    exit 1
-  end
-
-  load File.join(flutter_root, 'packages/flutter_tools/bin/podhelper.rb')
-
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 end
